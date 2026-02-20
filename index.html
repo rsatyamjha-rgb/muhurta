@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आज का मुहूर्त | Aaj Ka Muhurat</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue1: #4FC3F7;   /* light sky blue */
+  --blue2: #1565C0;   /* deep blue */
+  --blue3: #0D47A1;   /* darker blue */
+  --neon:  #00B4FF;   /* neon blue glow */
+  --silver:#B0C4DE;   /* silver-blue */
+  --cream: #E8F4FF;   /* blue-tinted cream */
+  --bg:    #00050f;   /* deep night blue-black */
+  --shubh: #1B5E20;
+  --ashubh:#B71C1C;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--cream); min-height:100vh; overflow-x:hidden; }
+
+/* ===== SAMAY CHAKRA – BLUE ===== */
+.chakra-bg {
+  position:fixed; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  pointer-events:none; z-index:0; overflow:hidden;
+}
+.chakra-wrap {
+  position:relative;
+  width:min(140vw,140vh); height:min(140vw,140vh);
+  opacity:0.22;
+}
+
+.ring {
+  position:absolute; border-radius:50%;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+}
+.ring-1 { width:98%;height:98%; border:3px solid var(--neon);   animation:cw 60s linear infinite; }
+.ring-2 { width:85%;height:85%; border:2px dashed var(--blue1); animation:ccw 45s linear infinite; }
+.ring-3 { width:72%;height:72%; border:2px solid var(--blue1);  animation:cw 30s linear infinite; }
+.ring-4 { width:59%;height:59%; border:3px dotted var(--neon);  animation:ccw 10s linear infinite; }
+.ring-5 { width:46%;height:46%; border:2px solid var(--blue1);  animation:cw 15s linear infinite; }
+.ring-6 { width:33%;height:33%; border:2px solid var(--neon);   animation:ccw 10s linear infinite; }
+.ring-7 { width:18%;height:18%; border:2px solid var(--blue1);  animation:cw 6s linear infinite; }
+
+/* Outer spokes */
+.spokes {
+  position:absolute; width:98%;height:98%;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:cw 60s linear infinite;
+}
+.spoke {
+  position:absolute; width:100%; height:1.5px;
+  background:linear-gradient(90deg,transparent,rgba(79,195,247,0.65),rgba(79,195,247,0.65),transparent);
+  top:50%;left:0;transform-origin:center;
+}
+.spoke:nth-child(1){transform:translateY(-50%) rotate(0deg);}
+.spoke:nth-child(2){transform:translateY(-50%) rotate(15deg);}
+.spoke:nth-child(3){transform:translateY(-50%) rotate(30deg);}
+.spoke:nth-child(4){transform:translateY(-50%) rotate(45deg);}
+.spoke:nth-child(5){transform:translateY(-50%) rotate(60deg);}
+.spoke:nth-child(6){transform:translateY(-50%) rotate(75deg);}
+.spoke:nth-child(7){transform:translateY(-50%) rotate(90deg);}
+.spoke:nth-child(8){transform:translateY(-50%) rotate(105deg);}
+.spoke:nth-child(9){transform:translateY(-50%) rotate(120deg);}
+.spoke:nth-child(10){transform:translateY(-50%) rotate(135deg);}
+.spoke:nth-child(11){transform:translateY(-50%) rotate(150deg);}
+.spoke:nth-child(12){transform:translateY(-50%) rotate(165deg);}
+
+/* Inner spokes counter-rotate */
+.spokes2 {
+  position:absolute; width:55%;height:55%;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:ccw 8s linear infinite;
+}
+.spoke2 {
+  position:absolute; width:100%;height:1.5px;
+  background:linear-gradient(90deg,transparent,rgba(0,180,255,0.5),transparent);
+  top:50%;left:0;transform-origin:center;
+}
+.spoke2:nth-child(1){transform:translateY(-50%) rotate(0deg);}
+.spoke2:nth-child(2){transform:translateY(-50%) rotate(22.5deg);}
+.spoke2:nth-child(3){transform:translateY(-50%) rotate(45deg);}
+.spoke2:nth-child(4){transform:translateY(-50%) rotate(67.5deg);}
+.spoke2:nth-child(5){transform:translateY(-50%) rotate(90deg);}
+.spoke2:nth-child(6){transform:translateY(-50%) rotate(112.5deg);}
+.spoke2:nth-child(7){transform:translateY(-50%) rotate(135deg);}
+.spoke2:nth-child(8){transform:translateY(-50%) rotate(157.5deg);}
+
+/* Outer blue glowing dots */
+.dots-ring {
+  position:absolute; width:92%;height:92%;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:ccw 40s linear infinite;
+}
+.dot {
+  position:absolute; width:7px;height:7px;
+  background:var(--neon); border-radius:50%;
+  top:50%;left:50%;
+  box-shadow:0 0 10px var(--neon), 0 0 20px rgba(0,180,255,0.4);
+}
+.dot:nth-child(1){transform:rotate(0deg)   translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(2){transform:rotate(15deg)  translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(3){transform:rotate(30deg)  translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(4){transform:rotate(45deg)  translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(5){transform:rotate(60deg)  translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(6){transform:rotate(75deg)  translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(7){transform:rotate(90deg)  translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(8){transform:rotate(105deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(9){transform:rotate(120deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(10){transform:rotate(135deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(11){transform:rotate(150deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(12){transform:rotate(165deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(13){transform:rotate(180deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(14){transform:rotate(195deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(15){transform:rotate(210deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(16){transform:rotate(225deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(17){transform:rotate(240deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(18){transform:rotate(255deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(19){transform:rotate(270deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(20){transform:rotate(285deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(21){transform:rotate(300deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(22){transform:rotate(315deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(23){transform:rotate(330deg) translateX(calc(46vmin)) translateY(-3.5px);}
+.dot:nth-child(24){transform:rotate(345deg) translateX(calc(46vmin)) translateY(-3.5px);}
+
+/* Middle silver dots */
+.dots-ring2 {
+  position:absolute; width:65%;height:65%;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:cw 25s linear infinite;
+}
+.dot2 {
+  position:absolute; width:5px;height:5px;
+  background:var(--blue1); border-radius:50%;
+  top:50%;left:50%;
+  box-shadow:0 0 7px var(--blue1);
+}
+.dot2:nth-child(1){transform:rotate(0deg)   translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(2){transform:rotate(30deg)  translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(3){transform:rotate(60deg)  translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(4){transform:rotate(90deg)  translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(5){transform:rotate(120deg) translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(6){transform:rotate(150deg) translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(7){transform:rotate(180deg) translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(8){transform:rotate(210deg) translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(9){transform:rotate(240deg) translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(10){transform:rotate(270deg) translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(11){transform:rotate(300deg) translateX(calc(32vmin)) translateY(-2.5px);}
+.dot2:nth-child(12){transform:rotate(330deg) translateX(calc(32vmin)) translateY(-2.5px);}
+
+/* Triangles */
+.tris {
+  position:absolute; width:76%;height:76%;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:cw 25s linear infinite;
+}
+.tri {
+  position:absolute; width:0;height:0;
+  border-left:11px solid transparent;
+  border-right:11px solid transparent;
+  border-bottom:19px solid rgba(79,195,247,0.25);
+  top:50%;left:50%;transform-origin:0 0;
+}
+.tri:nth-child(1){transform:rotate(0deg)   translateX(calc(37vmin)) translateY(-9px);}
+.tri:nth-child(2){transform:rotate(60deg)  translateX(calc(37vmin)) translateY(-9px);}
+.tri:nth-child(3){transform:rotate(120deg) translateX(calc(37vmin)) translateY(-9px);}
+.tri:nth-child(4){transform:rotate(180deg) translateX(calc(37vmin)) translateY(-9px);}
+.tri:nth-child(5){transform:rotate(240deg) translateX(calc(37vmin)) translateY(-9px);}
+.tri:nth-child(6){transform:rotate(300deg) translateX(calc(37vmin)) translateY(-9px);}
+
+.star-ring {
+  position:absolute; width:46%;height:46%;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:ccw 12s linear infinite;
+}
+.star-tri {
+  position:absolute; width:0;height:0;
+  border-left:14px solid transparent;
+  border-right:14px solid transparent;
+  border-bottom:24px solid rgba(0,180,255,0.18);
+  top:50%;left:50%;transform-origin:0 0;
+}
+.star-tri:nth-child(1){transform:rotate(0deg)   translateX(calc(22vmin)) translateY(-12px);}
+.star-tri:nth-child(2){transform:rotate(60deg)  translateX(calc(22vmin)) translateY(-12px);}
+.star-tri:nth-child(3){transform:rotate(120deg) translateX(calc(22vmin)) translateY(-12px);}
+.star-tri:nth-child(4){transform:rotate(180deg) translateX(calc(22vmin)) translateY(-12px);}
+.star-tri:nth-child(5){transform:rotate(240deg) translateX(calc(22vmin)) translateY(-12px);}
+.star-tri:nth-child(6){transform:rotate(300deg) translateX(calc(22vmin)) translateY(-12px);}
+
+/* Blue lotus center */
+.lotus {
+  position:absolute; width:16%;height:16%;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:ccw 8s linear infinite;
+}
+.petal {
+  position:absolute; width:38%;height:58%;
+  background:radial-gradient(ellipse,rgba(0,180,255,0.5),transparent 70%);
+  border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+  top:0;left:31%;transform-origin:50% 100%;
+  border:1px solid rgba(79,195,247,0.3);
+}
+.petal:nth-child(1){transform:rotate(0deg);}
+.petal:nth-child(2){transform:rotate(45deg);}
+.petal:nth-child(3){transform:rotate(90deg);}
+.petal:nth-child(4){transform:rotate(135deg);}
+.petal:nth-child(5){transform:rotate(180deg);}
+.petal:nth-child(6){transform:rotate(225deg);}
+.petal:nth-child(7){transform:rotate(270deg);}
+.petal:nth-child(8){transform:rotate(315deg);}
+
+/* Blue atmosphere */
+.bg-atm {
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse at top,    rgba(0,30,100,0.55) 0%,transparent 55%),
+    radial-gradient(ellipse at bottom, rgba(0,60,180,0.12) 0%,transparent 55%),
+    radial-gradient(ellipse at center, rgba(0,5,20,0.65)   20%,transparent 80%);
+}
+
+/* Stars in background */
+.stars {
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(79,195,247,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 60%, rgba(79,195,247,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 80%, rgba(79,195,247,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 35%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 65%, rgba(79,195,247,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, rgba(79,195,247,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 50%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 40%, rgba(79,195,247,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 85%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5%  50%, rgba(79,195,247,0.5) 0%, transparent 100%);
+}
+
+@keyframes cw   {to{transform:translate(-50%,-50%) rotate(360deg);}}
+@keyframes ccw  {to{transform:translate(-50%,-50%) rotate(-360deg);}}
+@keyframes glow {
+  0%,100%{
+    text-shadow:
+      0 0 20px rgba(79,195,247,0.9),
+      0 0 40px rgba(0,180,255,0.7),
+      0 0 80px rgba(79,195,247,0.4),
+      0 0 120px rgba(0,100,255,0.3);
+  }
+  25%{
+    text-shadow:
+      0 0 30px rgba(0,180,255,1),
+      0 0 60px rgba(79,195,247,0.9),
+      0 0 100px rgba(0,180,255,0.6),
+      0 0 150px rgba(79,195,247,0.3);
+  }
+  50%{
+    text-shadow:
+      0 0 40px rgba(79,195,247,1),
+      0 0 80px rgba(0,180,255,1),
+      0 0 120px rgba(79,195,247,0.8),
+      0 0 180px rgba(0,100,255,0.5),
+      0 0 220px rgba(79,195,247,0.2);
+  }
+  75%{
+    text-shadow:
+      0 0 25px rgba(0,180,255,0.9),
+      0 0 50px rgba(79,195,247,0.8),
+      0 0 90px rgba(0,180,255,0.5),
+      0 0 130px rgba(79,195,247,0.3);
+  }
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:0.75;}50%{opacity:1;}}
+@keyframes twinkle{0%,100%{opacity:0.3;}50%{opacity:1;}}
+
+/* ===== CONTENT ===== */
+.container{max-width:920px;margin:0 auto;padding:20px;position:relative;z-index:2;}
+
+header{text-align:center;padding:48px 0 28px;}
+.om{font-size:5.5rem;color:var(--blue1);display:block;animation:glow 2s ease-in-out infinite;margin-bottom:8px;filter:drop-shadow(0 0 30px rgba(0,180,255,0.8));}
+.site-title{font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(2.6rem,8vw,5rem);color:var(--blue1);letter-spacing:3px;}
+.site-en{font-family:'Cinzel Decorative',serif;font-size:clamp(0.7rem,2vw,1rem);letter-spacing:5px;color:rgba(79,195,247,0.5);margin-top:6px;}
+.divider{display:flex;align-items:center;gap:12px;margin:18px auto;max-width:340px;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--blue1),transparent);}
+.live-clock{font-size:2rem;font-weight:600;color:var(--neon);letter-spacing:5px;font-family:'Cinzel Decorative',serif;text-shadow:0 0 18px rgba(0,180,255,0.7);animation:pulse 2s ease-in-out infinite;}
+.live-date{font-size:0.78rem;color:rgba(232,244,255,0.45);margin-top:5px;letter-spacing:2px;}
+
+.glass{background:rgba(0,10,35,0.7);border:1px solid rgba(79,195,247,0.2);border-radius:16px;backdrop-filter:blur(14px);padding:22px;margin-bottom:22px;}
+
+.sel-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+@media(max-width:500px){.sel-grid{grid-template-columns:1fr;}}
+.form-group label{display:block;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;color:var(--blue1);margin-bottom:7px;}
+.form-group select,.form-group input{width:100%;background:rgba(0,5,25,0.6);border:1px solid rgba(79,195,247,0.25);color:var(--cream);padding:11px 14px;border-radius:8px;font-family:'Poppins',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.3s;}
+.form-group select:focus,.form-group input:focus{border-color:var(--neon);box-shadow:0 0 10px rgba(0,180,255,0.2);}
+.form-group select option{background:#000d2e;}
+
+.calc-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1565C0,#0D47A1,#00B4FF);color:var(--cream);border:none;border-radius:10px;font-family:'Tiro Devanagari Hindi',serif;font-size:1.3rem;font-weight:bold;cursor:pointer;letter-spacing:2px;transition:all 0.3s;box-shadow:0 4px 25px rgba(0,100,255,0.4);}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 35px rgba(0,180,255,0.6);}
+
+.today-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;}
+@media(max-width:500px){.today-bar{grid-template-columns:repeat(2,1fr);}}
+.today-item{background:rgba(0,10,35,0.65);border:1px solid rgba(79,195,247,0.15);border-radius:12px;padding:14px 10px;text-align:center;animation:fadeUp 0.4s ease both;}
+.t-label{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--blue1);margin-bottom:4px;}
+.t-val{font-family:'Tiro Devanagari Hindi',serif;font-size:1.05rem;}
+
+.rahu-card{background:linear-gradient(135deg,rgba(60,0,80,0.7),rgba(80,0,120,0.45));border:1px solid rgba(150,80,255,0.3);border-radius:14px;padding:20px 22px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;animation:fadeUp 0.5s ease both;}
+.rahu-title{font-family:'Tiro Devanagari Hindi',serif;font-size:1.4rem;color:#CE93D8;margin-bottom:3px;}
+.rahu-time{font-size:2.2rem;font-weight:700;color:#EF9A9A;letter-spacing:2px;}
+.rahu-warn{font-size:0.78rem;color:rgba(232,244,255,0.5);max-width:280px;line-height:1.7;}
+
+.sec-title{font-family:'Tiro Devanagari Hindi',serif;font-size:1.7rem;color:var(--blue1);text-align:center;margin-bottom:14px;letter-spacing:1px;text-shadow:0 0 15px rgba(79,195,247,0.4);}
+
+.muh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px;margin-bottom:22px;}
+.muh-card{border-radius:14px;padding:18px;position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;animation:fadeUp 0.5s ease both;}
+.muh-card:hover{transform:translateY(-4px);}
+.muh-card::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,0.015) 12px,rgba(255,255,255,0.015) 13px);}
+.muh-card.shubh{background:linear-gradient(135deg,rgba(0,30,60,0.8),rgba(0,60,100,0.5));border:1px solid rgba(79,195,247,0.25);box-shadow:0 4px 20px rgba(0,100,200,0.2);}
+.muh-card.ashubh{background:linear-gradient(135deg,rgba(75,0,0,0.75),rgba(120,18,18,0.45));border:1px solid rgba(255,80,80,0.22);}
+.muh-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;}
+.muh-icon{font-size:1.9rem;}
+.muh-badge{font-size:0.62rem;letter-spacing:1px;padding:3px 10px;border-radius:20px;text-transform:uppercase;font-weight:600;}
+.badge-shubh{background:rgba(79,195,247,0.1);color:var(--blue1);border:1px solid rgba(79,195,247,0.25);}
+.badge-ashubh{background:rgba(255,100,100,0.08);color:#EF9A9A;border:1px solid rgba(255,100,100,0.22);}
+.muh-name{font-family:'Tiro Devanagari Hindi',serif;font-size:1.25rem;margin-bottom:3px;}
+.muh-time{font-size:1.55rem;font-weight:600;margin-bottom:6px;letter-spacing:1px;color:var(--neon);}
+.muh-card.ashubh .muh-time{color:#EF9A9A;}
+.muh-desc{font-size:0.88rem;color:rgba(232,244,255,0.52);line-height:1.6;}
+
+.act-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-bottom:22px;}
+.act-card{background:rgba(0,10,35,0.6);border:1px solid rgba(79,195,247,0.13);border-radius:12px;padding:16px 12px;text-align:center;cursor:pointer;transition:all 0.3s;animation:fadeUp 0.5s ease both;}
+.act-card:hover{background:rgba(79,195,247,0.08);border-color:var(--neon);transform:translateY(-3px);box-shadow:0 4px 15px rgba(0,180,255,0.15);}
+.act-icon{font-size:1.9rem;margin-bottom:7px;display:block;}
+.act-name{font-family:'Tiro Devanagari Hindi',serif;font-size:1.05rem;margin-bottom:4px;}
+.act-time{font-size:0.85rem;color:var(--blue1);}
+
+.panch-table{width:100%;border-collapse:collapse;}
+.panch-table tr{border-bottom:1px solid rgba(79,195,247,0.08);}
+.panch-table td{padding:11px 14px;font-size:1rem;}
+.panch-table td:first-child{color:var(--blue1);font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;width:42%;}
+
+.ad-space{background:rgba(0,10,35,0.4);border:1px dashed rgba(79,195,247,0.13);border-radius:10px;padding:18px;text-align:center;color:rgba(232,244,255,0.13);font-size:0.7rem;letter-spacing:3px;margin-bottom:22px;min-height:90px;display:flex;align-items:center;justify-content:center;}
+
+footer{text-align:center;padding:28px 0;border-top:1px solid rgba(79,195,247,0.1);color:rgba(232,244,255,0.22);font-size:0.72rem;letter-spacing:1px;line-height:1.9;}
+
+/* ===== PROFESSIONAL ENHANCEMENTS ===== */
+
+/* Glowing header border */
+header {
+  position: relative;
+}
+header::after {
+  content: '';
+  display: block;
+  margin: 15px auto 0;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon), var(--blue1), var(--neon), transparent);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0,180,255,0.6);
+}
+
+/* Card hover glow */
+.muh-card.shubh:hover {
+  box-shadow: 0 8px 30px rgba(79,195,247,0.25), 0 0 0 1px rgba(79,195,247,0.2);
+}
+.muh-card.ashubh:hover {
+  box-shadow: 0 8px 30px rgba(255,80,80,0.2);
+}
+
+/* Glass card top accent line */
+.glass {
+  border-top: 2px solid rgba(79,195,247,0.4);
+  box-shadow: 0 4px 30px rgba(0,50,150,0.2), inset 0 1px 0 rgba(79,195,247,0.1);
+}
+
+/* Today items glow on hover */
+.today-item:hover {
+  border-color: rgba(79,195,247,0.4);
+  box-shadow: 0 0 15px rgba(0,180,255,0.1);
+  transform: translateY(-2px);
+  transition: all 0.3s;
+}
+
+/* Section title underline */
+.sec-title {
+  position: relative;
+  padding-bottom: 12px;
+}
+.sec-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 80px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon), transparent);
+  box-shadow: 0 0 10px var(--neon);
+}
+
+/* Panchang table row hover */
+.panch-table tr:hover td {
+  background: rgba(79,195,247,0.05);
+}
+
+/* Button shimmer effect */
+.calc-btn {
+  position: relative;
+  overflow: hidden;
+}
+.calc-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -75%;
+  width: 50%; height: 200%;
+  background: rgba(255,255,255,0.15);
+  transform: skewX(-20deg);
+  animation: shimmer 3s infinite;
+}
+@keyframes shimmer {
+  0% { left: -75%; }
+  100% { left: 150%; }
+}
+
+/* Rahu card pulse border */
+.rahu-card {
+  animation: rahuPulse 3s ease-in-out infinite;
+}
+@keyframes rahuPulse {
+  0%,100% { box-shadow: 0 0 10px rgba(150,80,255,0.2); }
+  50% { box-shadow: 0 0 25px rgba(150,80,255,0.4), 0 0 50px rgba(200,0,0,0.1); }
+}
+
+/* Activity card icon bounce */
+.act-card:hover .act-icon {
+  animation: bounce 0.5s ease;
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Footer glow */
+footer {
+  text-shadow: 0 0 10px rgba(79,195,247,0.2);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #00050f; }
+::-webkit-scrollbar-thumb { background: rgba(79,195,247,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(79,195,247,0.5); }
+
+/* Ad space professional look */
+.ad-space {
+  background: linear-gradient(135deg, rgba(0,10,35,0.6), rgba(0,20,60,0.4));
+  border: 1px solid rgba(79,195,247,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.ad-space::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon), transparent);
+  animation: scanline 4s linear infinite;
+}
+@keyframes scanline {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+/* Live clock special styling */
+.live-clock {
+  background: rgba(0,180,255,0.05);
+  border: 1px solid rgba(79,195,247,0.15);
+  border-radius: 12px;
+  padding: 8px 24px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- BLUE SAMAY CHAKRA -->
+<div class="chakra-bg">
+  <div class="chakra-wrap">
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+    <div class="ring ring-4"></div>
+    <div class="ring ring-5"></div>
+    <div class="ring ring-6"></div>
+    <div class="ring ring-7"></div>
+    <div class="spokes">
+      <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+      <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+      <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+      <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+    </div>
+    <div class="spokes2">
+      <div class="spoke2"></div><div class="spoke2"></div><div class="spoke2"></div>
+      <div class="spoke2"></div><div class="spoke2"></div><div class="spoke2"></div>
+      <div class="spoke2"></div><div class="spoke2"></div>
+    </div>
+    <div class="dots-ring">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="dots-ring2">
+      <div class="dot2"></div><div class="dot2"></div><div class="dot2"></div>
+      <div class="dot2"></div><div class="dot2"></div><div class="dot2"></div>
+      <div class="dot2"></div><div class="dot2"></div><div class="dot2"></div>
+      <div class="dot2"></div><div class="dot2"></div><div class="dot2"></div>
+    </div>
+    <div class="tris">
+      <div class="tri"></div><div class="tri"></div><div class="tri"></div>
+      <div class="tri"></div><div class="tri"></div><div class="tri"></div>
+    </div>
+    <div class="star-ring">
+      <div class="star-tri"></div><div class="star-tri"></div><div class="star-tri"></div>
+      <div class="star-tri"></div><div class="star-tri"></div><div class="star-tri"></div>
+    </div>
+    <div class="lotus">
+      <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+      <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+      <div class="petal"></div><div class="petal"></div>
+    </div>
+  </div>
+</div>
+<div class="bg-atm"></div>
+<div class="stars"></div>
+
+<!-- CONTENT -->
+<div class="container">
+  <header>
+    <span class="om">ॐ</span>
+    <h1 class="site-title">आज का मुहूर्त</h1>
+    <p class="site-en">SAMAY CHAKRA &nbsp;•&nbsp; VEDIC MUHURAT CALCULATOR</p>
+    <div class="divider"><span>🔵</span></div>
+    <div class="live-clock" id="liveClock">00:00:00</div>
+    <div class="live-date" id="liveDate"></div>
+  </header>
+
+  <div class="ad-space">ADVERTISEMENT · Google AdSense</div>
+
+  <div class="glass">
+    <div class="sel-grid">
+      <div class="form-group">
+        <label>📅 तारीख चुनें</label>
+        <input type="date" id="dateInput" 
+          style="color:var(--cream);background:rgba(0,5,25,0.6);border:1px solid rgba(79,195,247,0.25);padding:11px 14px;border-radius:8px;width:100%;font-size:0.88rem;cursor:pointer;outline:none;color-scheme:dark;"
+          onchange="calculateMuhurat()">
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <button onclick="changeDate(-1)" style="flex:1;padding:8px;background:rgba(79,195,247,0.15);border:1px solid rgba(79,195,247,0.3);color:var(--cream);border-radius:8px;cursor:pointer;font-size:1rem;">◀ Kal</button>
+          <button onclick="setToday()" style="flex:1;padding:8px;background:rgba(79,195,247,0.15);border:1px solid rgba(79,195,247,0.3);color:var(--cream);border-radius:8px;cursor:pointer;font-size:0.85rem;">Aaj</button>
+          <button onclick="changeDate(1)" style="flex:1;padding:8px;background:rgba(79,195,247,0.15);border:1px solid rgba(79,195,247,0.3);color:var(--cream);border-radius:8px;cursor:pointer;font-size:1rem;">Kal ▶</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>🏙️ शहर चुनें</label>
+        <select id="citySelect">
+          <option value="Delhi">दिल्ली (Delhi)</option>
+          <option value="Mumbai">मुंबई (Mumbai)</option>
+          <option value="Kolkata">कोलकाता (Kolkata)</option>
+          <option value="Chennai">चेन्नई (Chennai)</option>
+          <option value="Bengaluru">बेंगलुरु (Bengaluru)</option>
+          <option value="Hyderabad">हैदराबाद (Hyderabad)</option>
+          <option value="Ahmedabad">अहमदाबाद (Ahmedabad)</option>
+          <option value="Pune">पुणे (Pune)</option>
+          <option value="Jaipur">जयपुर (Jaipur)</option>
+          <option value="Lucknow">लखनऊ (Lucknow)</option>
+          <option value="Varanasi">वाराणसी (Varanasi)</option>
+          <option value="Patna">पटना (Patna)</option>
+          <option value="Bhopal">भोपाल (Bhopal)</option>
+          <option value="Indore">इंदौर (Indore)</option>
+          <option value="Nagpur">नागपुर (Nagpur)</option>
+          <option value="Surat">सूरत (Surat)</option>
+          <option value="Chandigarh">चंडीगढ़ (Chandigarh)</option>
+          <option value="Bhubaneswar">भुवनेश्वर (Bhubaneswar)</option>
+          <option value="Guwahati">गुवाहाटी (Guwahati)</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculateMuhurat()">🙏 मुहूर्त देखें • Muhurat Dekhen</button>
+  </div>
+
+  <div class="today-bar" id="todayBar"></div>
+  <div class="rahu-card" id="rahuCard"></div>
+  <div class="ad-space">ADVERTISEMENT · Google AdSense</div>
+
+  <h2 class="sec-title">⏰ आज के शुभ-अशुभ मुहूर्त</h2>
+  <div class="muh-grid" id="muhGrid"></div>
+
+  <h2 class="sec-title">🎯 किस काम के लिए कौन सा मुहूर्त</h2>
+  <div class="act-grid" id="actGrid"></div>
+
+  <h2 class="sec-title">📜 आज का पंचांग</h2>
+  <div class="glass">
+    <table class="panch-table" id="panchangTable"></table>
+  </div>
+
+  <div class="ad-space">ADVERTISEMENT · Google AdSense</div>
+
+  <footer>
+    <div style="font-size:2rem;margin-bottom:10px;">🔵 ॐ 🔵</div>
+    <p>© 2025 आज का मुहूर्त — सभी मुहूर्त वैदिक पंचांग पर आधारित हैं</p>
+    <p>यह जानकारी सामान्य मार्गदर्शन हेतु है। महत्वपूर्ण कार्यों के लिए विद्वान पंडितजी से परामर्श अवश्य लें।</p>
+  </footer>
+</div>
+
+<script>
+const CITY_DATA={
+  'Delhi':{rise:422,set:1099},'Mumbai':{rise:430,set:1115},
+  'Kolkata':{rise:388,set:1065},'Chennai':{rise:400,set:1090},
+  'Bengaluru':{rise:405,set:1093},'Hyderabad':{rise:403,set:1090},
+  'Ahmedabad':{rise:433,set:1115},'Pune':{rise:428,set:1110},
+  'Jaipur':{rise:420,set:1100},'Lucknow':{rise:408,set:1082},
+  'Varanasi':{rise:404,set:1078},'Patna':{rise:400,set:1074},
+  'Bhopal':{rise:415,set:1095},'Indore':{rise:420,set:1100},
+  'Nagpur':{rise:408,set:1088},'Surat':{rise:432,set:1113},
+  'Chandigarh':{rise:418,set:1098},'Bhubaneswar':{rise:393,set:1072},
+  'Guwahati':{rise:374,set:1052},
+};
+const RAHU_SLOT=[8,2,7,5,6,4,3];
+const GULI_SLOT=[6,5,4,3,2,1,7];
+const YAMA_SLOT=[5,4,3,2,1,7,6];
+const DAYS_HI=['रविवार','सोमवार','मंगलवार','बुधवार','गुरुवार','शुक्रवार','शनिवार'];
+const MONTHS_HI=['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितंबर','अक्टूबर','नवंबर','दिसंबर'];
+const TITHI=['प्रतिपदा','द्वितीया','तृतीया','चतुर्थी','पंचमी','षष्ठी','सप्तमी','अष्टमी','नवमी','दशमी','एकादशी','द्वादशी','त्रयोदशी','चतुर्दशी','पूर्णिमा'];
+const NAKSHATRA=['अश्विनी','भरणी','कृत्तिका','रोहिणी','मृगशिरा','आर्द्रा','पुनर्वसु','पुष्य','आश्लेषा','मघा','पूर्वा फाल्गुनी','उत्तरा फाल्गुनी','हस्त','चित्रा','स्वाती','विशाखा','अनुराधा','ज्येष्ठा','मूल','पूर्वाषाढा','उत्तराषाढा','श्रवण','धनिष्ठा','शतभिषा','पूर्व भाद्रपद','उत्तर भाद्रपद','रेवती'];
+const YOGA=['विष्कुम्भ','प्रीति','आयुष्मान','सौभाग्य','शोभन','अतिगंड','सुकर्मा','धृति','शूल','गंड','वृद्धि','ध्रुव','व्याघात','हर्षण','वज्र','सिद्धि','व्यतीपात','वरीयान','परिघ','शिव','सिद्ध','साध्य','शुभ','शुक्ल','ब्रह्म','इन्द्र','वैधृति'];
+const KARAN=['बव','बालव','कौलव','तैतिल','गर','वणिज','विष्टि','शकुनि','चतुष्पाद','नाग','किंस्तुघ्न'];
+
+function toHHMM(min){let h=Math.floor(min/60)%24,m=Math.round(min%60);const a=h>=12?'PM':'AM';if(h>12)h-=12;if(h===0)h=12;return `${h}:${String(m).padStart(2,'0')} ${a}`;}
+function getTithi(d){const r=new Date(2024,0,11);return TITHI[((Math.floor((d-r)/86400000)%15)+15)%15];}
+function getPaksha(d){const r=new Date(2024,0,11);return((Math.floor((d-r)/86400000)%30+30)%30)<15?'शुक्ल पक्ष':'कृष्ण पक्ष';}
+function getNakshatra(d){const r=new Date(2000,0,1);return NAKSHATRA[Math.abs(Math.floor(Math.floor((d-r)/86400000)*13/27))%27];}
+function getYoga(d){const r=new Date(2000,0,1);return YOGA[Math.abs(Math.floor((d-r)/86400000))%27];}
+function getKaran(d){const r=new Date(2000,0,1);return KARAN[Math.abs(Math.floor((d-r)/86400000))%11];}
+
+function calculateMuhurat(){
+  const dateVal=document.getElementById('dateInput').value;
+  const city=document.getElementById('citySelect').value;
+  const date=dateVal?new Date(dateVal):new Date();
+  const dayIdx=date.getDay();
+  const cd=CITY_DATA[city]||CITY_DATA['Delhi'];
+  const rise=cd.rise,set=cd.set,dayLen=set-rise,slot=dayLen/8;
+
+  const rahuS=rise+(RAHU_SLOT[dayIdx]-1)*slot,rahuE=rahuS+slot;
+  const guliS=rise+(GULI_SLOT[dayIdx]-1)*slot,guliE=guliS+slot;
+  const yamaS=rise+(YAMA_SLOT[dayIdx]-1)*slot,yamaE=yamaS+slot;
+  const brahmaS=rise-96,brahmaE=rise-48;
+  const noon=rise+dayLen/2;
+  const abhijitS=noon-24,abhijitE=noon+24;
+  const vijayaS=noon+dayLen*0.15,vijayaE=vijayaS+48;
+  const nIdx=NAKSHATRA.indexOf(getNakshatra(date));
+  const amritS=rise+((nIdx*53)%dayLen),amritE=amritS+36;
+  const godhuliS=set-24,godhuliE=set+24;
+
+  document.getElementById('todayBar').innerHTML=[
+    {label:'वार',val:DAYS_HI[dayIdx]},
+    {label:'तिथि',val:getTithi(date)},
+    {label:'पक्ष',val:getPaksha(date)},
+    {label:'नक्षत्र',val:getNakshatra(date)},
+    {label:'सूर्योदय',val:toHHMM(rise)},
+    {label:'सूर्यास्त',val:toHHMM(set)},
+  ].map((d,i)=>`<div class="today-item" style="animation-delay:${i*0.08}s"><div class="t-label">${d.label}</div><div class="t-val">${d.val}</div></div>`).join('');
+
+  document.getElementById('rahuCard').innerHTML=`
+    <div><div class="rahu-title">🚫 राहु काल — ${DAYS_HI[dayIdx]}</div>
+    <div class="rahu-time">${toHHMM(rahuS)} – ${toHHMM(rahuE)}</div></div>
+    <div class="rahu-warn">⚠️ इस समय कोई शुभ कार्य न करें।<br>
+    गुलिक काल: ${toHHMM(guliS)} – ${toHHMM(guliE)}<br>
+    यमघंट काल: ${toHHMM(yamaS)} – ${toHHMM(yamaE)}</div>`;
+
+  const muhs=[
+    {name:'ब्रह्म मुहूर्त',icon:'🌄',type:'shubh',time:`${toHHMM(brahmaS)} – ${toHHMM(brahmaE)}`,desc:'पूजा, ध्यान, पढ़ाई का सर्वोत्तम समय।'},
+    {name:'अभिजित मुहूर्त',icon:'☀️',type:'shubh',time:`${toHHMM(abhijitS)} – ${toHHMM(abhijitE)}`,desc:'दिन का सर्वश्रेष्ठ मुहूर्त। सभी कार्यों के लिए उत्तम।'},
+    {name:'विजय मुहूर्त',icon:'🏆',type:'shubh',time:`${toHHMM(vijayaS)} – ${toHHMM(vijayaE)}`,desc:'नई शुरुआत और महत्वपूर्ण निर्णयों के लिए शुभ।'},
+    {name:'अमृत काल',icon:'✨',type:'shubh',time:`${toHHMM(amritS)} – ${toHHMM(amritE)}`,desc:'स्वास्थ्य और दवा के लिए विशेष शुभ।'},
+    {name:'गोधूलि मुहूर्त',icon:'🌅',type:'shubh',time:`${toHHMM(godhuliS)} – ${toHHMM(godhuliE)}`,desc:'विवाह और गृह प्रवेश के लिए अत्यंत शुभ।'},
+    {name:'राहु काल',icon:'🚫',type:'ashubh',time:`${toHHMM(rahuS)} – ${toHHMM(rahuE)}`,desc:'कोई शुभ कार्य न करें।'},
+    {name:'गुलिक काल',icon:'⛔',type:'ashubh',time:`${toHHMM(guliS)} – ${toHHMM(guliE)}`,desc:'महत्वपूर्ण कार्य और यात्रा से बचें।'},
+    {name:'यमघंट काल',icon:'🔴',type:'ashubh',time:`${toHHMM(yamaS)} – ${toHHMM(yamaE)}`,desc:'नए कार्य के लिए अनुचित समय।'},
+  ];
+  document.getElementById('muhGrid').innerHTML=muhs.map((m,i)=>`
+    <div class="muh-card ${m.type}" style="animation-delay:${i*0.07}s">
+      <div class="muh-header"><span class="muh-icon">${m.icon}</span>
+      <span class="muh-badge badge-${m.type}">${m.type==='shubh'?'शुभ ✓':'अशुभ ✗'}</span></div>
+      <div class="muh-name">${m.name}</div>
+      <div class="muh-time">${m.time}</div>
+      <div class="muh-desc">${m.desc}</div>
+    </div>`).join('');
+
+  const acts=[
+    {icon:'🚗',name:'यात्रा',time:toHHMM(abhijitS)},
+    {icon:'🛍️',name:'खरीदारी',time:toHHMM(vijayaS)},
+    {icon:'💼',name:'Interview',time:toHHMM(brahmaS+130)},
+    {icon:'🏠',name:'गृह प्रवेश',time:toHHMM(godhuliS)},
+    {icon:'💰',name:'व्यापार',time:toHHMM(abhijitS)},
+    {icon:'📚',name:'पढ़ाई',time:toHHMM(brahmaS)},
+    {icon:'🏥',name:'दवा / इलाज',time:toHHMM(amritS)},
+    {icon:'🙏',name:'पूजा / हवन',time:toHHMM(brahmaS)},
+    {icon:'💍',name:'विवाह',time:toHHMM(godhuliS)},
+    {icon:'🌱',name:'नया काम',time:toHHMM(abhijitS)},
+  ];
+  document.getElementById('actGrid').innerHTML=acts.map((a,i)=>`
+    <div class="act-card" style="animation-delay:${i*0.05}s">
+      <span class="act-icon">${a.icon}</span>
+      <div class="act-name">${a.name}</div>
+      <div class="act-time">शुभ: ${a.time}</div>
+    </div>`).join('');
+
+  const rows=[
+    ['वार (Vaar)',DAYS_HI[dayIdx]],['तिथि (Tithi)',getTithi(date)],
+    ['पक्ष (Paksha)',getPaksha(date)],['नक्षत्र (Nakshatra)',getNakshatra(date)],
+    ['योग (Yoga)',getYoga(date)],['करण (Karan)',getKaran(date)],
+    ['सूर्योदय (Sunrise)',toHHMM(rise)],['सूर्यास्त (Sunset)',toHHMM(set)],
+    ['अभिजित मुहूर्त',`${toHHMM(abhijitS)} – ${toHHMM(abhijitE)}`],
+    ['राहु काल',`${toHHMM(rahuS)} – ${toHHMM(rahuE)}`],
+    ['शहर / City',city],
+  ];
+  document.getElementById('panchangTable').innerHTML=rows.map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+}
+
+function updateClock(){
+  const n=new Date();
+  document.getElementById('liveClock').textContent=`${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')}`;
+  document.getElementById('liveDate').textContent=`${DAYS_HI[n.getDay()]}, ${n.getDate()} ${MONTHS_HI[n.getMonth()]} ${n.getFullYear()}`;
+}
+setInterval(updateClock,1000);updateClock();
+document.getElementById('dateInput').value=new Date().toISOString().split('T')[0];
+calculateMuhurat();
+
+function changeDate(days){
+  const input=document.getElementById('dateInput');
+  const current=input.value?new Date(input.value):new Date();
+  current.setDate(current.getDate()+days);
+  input.value=current.toISOString().split('T')[0];
+  calculateMuhurat();
+}
+function setToday(){
+  document.getElementById('dateInput').value=new Date().toISOString().split('T')[0];
+  calculateMuhurat();
+}
+</script>
+</body>
+</html>
