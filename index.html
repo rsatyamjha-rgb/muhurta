@@ -604,9 +604,88 @@ footer {
   <div class="act-grid" id="actGrid"></div>
 
   <h2 class="sec-title">📜 आज का पंचांग</h2>
-  <div class="glass" style="padding:10px;">
-    <script type="text/javascript" src="https://panchang.click/panchangwidgetjs?rid=99aee84841794120c3c3185dd1ae1303"></script>
+  <div class="glass" style="padding:5px; overflow:hidden; border-radius:16px;">
+    <style>
+      /* Override widget styles to match our theme */
+      #panchang-widget-container, .panchang-widget, [id*="panchang"], [class*="panchang"] {
+        background: transparent !important;
+        color: #E8F4FF !important;
+        font-family: 'Poppins', sans-serif !important;
+        border: none !important;
+      }
+      iframe[src*="panchang"] {
+        filter: invert(1) hue-rotate(180deg) saturate(1.5);
+        border-radius: 12px;
+      }
+    </style>
+    <div style="
+      background: rgba(0,10,35,0.8);
+      border-radius: 12px;
+      padding: 15px;
+      filter: hue-rotate(0deg);
+      position: relative;
+    ">
+      <div style="
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        border: 1px solid rgba(79,195,247,0.2);
+        pointer-events: none;
+      "></div>
+      <script type="text/javascript" src="https://panchang.click/panchangwidgetjs?rid=99aee84841794120c3c3185dd1ae1303"></script>
+    </div>
   </div>
+  
+  <!-- Custom CSS to restyle the widget after it loads -->
+  <script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      // Try to find and restyle widget elements
+      var allTables = document.querySelectorAll('table');
+      allTables.forEach(function(table) {
+        if(table.closest('.glass')) {
+          table.style.width = '100%';
+          table.style.color = '#E8F4FF';
+          table.style.background = 'transparent';
+          table.style.borderCollapse = 'collapse';
+          var cells = table.querySelectorAll('td, th');
+          cells.forEach(function(cell) {
+            cell.style.color = '#E8F4FF';
+            cell.style.background = 'transparent';
+            cell.style.borderBottom = '1px solid rgba(79,195,247,0.1)';
+            cell.style.padding = '8px 12px';
+            cell.style.fontSize = '1rem';
+          });
+        }
+      });
+      
+      // Restyle all divs inside widget
+      var widgetDivs = document.querySelectorAll('.glass div');
+      widgetDivs.forEach(function(div) {
+        if(div.style.background && div.style.background.includes('white') || 
+           div.style.background === '#fff' || div.style.backgroundColor === 'white') {
+          div.style.background = 'transparent';
+          div.style.color = '#E8F4FF';
+        }
+      });
+
+      // Override any white/light backgrounds
+      var allElements = document.querySelectorAll('.glass *');
+      allElements.forEach(function(el) {
+        var bg = window.getComputedStyle(el).backgroundColor;
+        if(bg === 'rgb(255, 255, 255)' || bg === 'rgb(240, 240, 240)' || bg === 'rgb(248, 248, 248)') {
+          el.style.backgroundColor = 'rgba(0,10,35,0.8)';
+          el.style.color = '#E8F4FF';
+        }
+        // Fix red/orange colors to blue theme
+        var color = window.getComputedStyle(el).color;
+        if(color === 'rgb(255, 0, 0)' || color === 'rgb(200, 0, 0)') {
+          el.style.color = '#4FC3F7';
+        }
+      });
+    }, 2000);
+  });
+  </script>
 
   <div class="ad-space">ADVERTISEMENT · Google AdSense</div>
 
