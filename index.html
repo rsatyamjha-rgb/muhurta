@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ===== PRIMARY SEO META ===== -->
-<meta name="description" content="Delhi mein aaj ka shubh muhurat, Rahu Kaal, Brahma Muhurat, Abhijit Muhurat aur panchang — आज का मुहूर्त। Vedic Panchang Calculator for Tithi, Nakshatra, Yoga, Sunrise, Sunset. Accurate daily muhurat for marriage, travel, business, pooja and more.">
+<meta name="description" id="metaDesc" content="Delhi mein aaj ka shubh muhurat, Rahu Kaal, Brahma Muhurat aur Panchang — आज का मुहूर्त 2026. Vedic Panchang Calculator for Tithi, Nakshatra, Yoga, Sunrise & Sunset. Accurate daily muhurat for vivah, yatra, business, pooja and more.">
 <meta name="keywords" content="aaj ka muhurat, आज का मुहूर्त, today muhurat, shubh muhurat today, rahu kaal today, aaj ka rahu kaal, panchang today, aaj ka panchang, brahma muhurat, abhijit muhurat, vijay muhurat, godhuli muhurat, tithi today, nakshatra today, vedic panchang 2026, muhurat calculator, शुभ मुहूर्त, राहु काल, पंचांग, तिथि, नक्षत्र">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Aaj Ka Muhurat - Vedic Panchang Calculator">
@@ -76,7 +76,7 @@
 }
 </script>
 
-<!-- ===== SCHEMA MARKUP - FAQPage ===== -->
+<!-- ===== SCHEMA MARKUP - FAQPage (Hinglish) ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,7 +87,7 @@
       "name": "Delhi mein aaj ka shubh muhurat kya hai? (आज का शुभ मुहूर्त)",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Delhi mein aaj ka sabse shubh muhurat Abhijit Muhurat hai jo dopahar ke samay lagbhag 48 minute ka hota hai. Brahma Muhurat suryoday se 96 minute pehle shuru hota hai. Upar calculator mein city aur date chunen — exact timings milenge."
+        "text": "Delhi ke liye aaj ka sabse shubh muhurat Abhijit Muhurat hai jo solar noon ke aaspaas 48 minute ka hota hai. Brahma Muhurat suryoday se 96 minute pehle shuru hota hai aur Vijay Muhurat bhi ati shubh maana jaata hai."
       }
     },
     {
@@ -95,7 +95,7 @@
       "name": "Rahu Kaal aaj kitne baje hai? (राहु काल का समय)",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Rahu Kaal ka samay pratiddin badalta hai aur ye aapki city ke sunrise-sunset par nirbhar karta hai. Upar calculator mein apna sheher chunen — sahi Rahu Kaal dikhega. Is samay koi bhi shubh kaarya aarambh na karein."
+        "text": "Rahu Kaal ka samay har roz weekday ke hisaab se badalta hai aur ye aapke sheher ke sunrise-sunset par depend karta hai. Upar calculator mein city chunen — exact Rahu Kaal time milega. Is samay koi naya shubh kaam shuru na karein."
       }
     },
     {
@@ -108,21 +108,54 @@
     },
     {
       "@type": "Question",
-      "name": "Abhijit Muhurat kya hai? (अभिजित मुहूर्त)",
+      "name": "Shaadi ke liye kaunsa muhurat sabse achha hai? (विवाह मुहूर्त)",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Abhijit Muhurat din ka sarvashreshtha muhurat hai. Ye surya ki madhyahna sthiti ke aaspas lagbhag 48 minute ka hota hai aur sabhi shubh karyon ke liye uttam maana jaata hai."
+        "text": "Vivah ke liye Godhuli Muhurat (sunset ke samay) sarvashreshtha maana jaata hai. Abhijit Muhurat aur Shukla Paksha ki tithiyaan bhi vivah ke liye shubh hoti hain."
       }
     },
     {
       "@type": "Question",
-      "name": "Shaadi ke liye Godhuli Muhurat kya hota hai? (गोधूलि मुहूर्त)",
+      "name": "Ye Muhurat calculator kitna accurate hai? (IP Detection aur SunCalc)",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Godhuli Muhurat suryast ke samay hota hai aur vivah tatha grih pravesh ke liye atyant shubh maana jaata hai. Ye samay sunset se 24 minute pehle aur baad tak rehta hai."
+        "text": "Ye calculator SunCalc astronomical library use karta hai jo city ke exact latitude-longitude ke hisaab se sunrise-sunset calculate karta hai. IP detection se city automatic detect hoti hai — bina browser popup ke."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vedic din midnight ke baad kaise count hota hai? (वैदिक दिन गणना)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vedic tradition mein ek din suryoday se shuru hokar agle suryoday tak maana jaata hai. Isliye raat 12 baje ke baad bhi suryoday tak pichle din ka panchang valid hota hai."
       }
     }
   ]
+}
+</script>
+
+<!-- ===== SCHEMA MARKUP - Event (Dynamic, injected by JS) ===== -->
+<script type="application/ld+json" id="eventSchema">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Aaj Ka Shubh Muhurat — Delhi Vedic Panchang",
+  "description": "Delhi mein aaj ka shubh muhurat, Rahu Kaal, Brahma Muhurat, Abhijit Muhurat aur Panchang. Vedic Panchang Calculator powered by SunCalc.",
+  "startDate": "2026-02-26",
+  "endDate": "2026-02-26",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "https://aajkamuhurat.in/"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Aaj Ka Muhurat",
+    "url": "https://aajkamuhurat.in/"
+  },
+  "inLanguage": ["hi", "en"],
+  "url": "https://aajkamuhurat.in/"
 }
 </script>
 
@@ -776,7 +809,11 @@ footer{text-align:center;padding:28px 0;border-top:1px solid rgba(79,195,247,0.1
 <div class="container">
   <header>
     <span class="om">ॐ</span>
-    <h1 class="site-title" itemprop="name" id="mainH1">Aaj Ka Shubh Muhurat <span style="font-size:0.45em;opacity:0.5;display:block;font-family:'Poppins',sans-serif;letter-spacing:3px;margin-top:2px;text-transform:uppercase;">आज का शुभ मुहूर्त</span><span id="h1City" style="font-size:0.45em;opacity:0.6;display:block;font-family:'Tiro Devanagari Hindi',serif;letter-spacing:2px;margin-top:4px;"></span></h1>
+    <h1 class="site-title" itemprop="name" id="mainH1">
+      Aaj Ka Shubh Muhurat
+      <span style="font-size:0.5em;opacity:0.55;display:block;font-family:'Tiro Devanagari Hindi',serif;letter-spacing:1px;margin-top:3px;font-weight:400;">आज का शुभ मुहूर्त — Today's Vedic Panchang</span>
+      <span id="h1City" style="font-size:0.42em;opacity:0.5;display:block;font-family:'Poppins',sans-serif;letter-spacing:3px;margin-top:5px;text-transform:uppercase;"></span>
+    </h1>
     <p class="site-sub" id="dynamicSubtitle" style="font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(0.85rem,2vw,1.1rem);color:rgba(232,244,255,0.5);margin-top:6px;letter-spacing:1px;"></p>
     <p class="site-en">SAMAY CHAKRA &nbsp;•&nbsp; VEDIC MUHURAT CALCULATOR</p>
     <p style="font-size:0.65rem;color:rgba(79,195,247,0.3);letter-spacing:2px;margin-top:4px;">
@@ -862,14 +899,14 @@ footer{text-align:center;padding:28px 0;border-top:1px solid rgba(79,195,247,0.1
   <div class="ad-space"><span aria-hidden="true">विज्ञापन</span></div>
 
   <section id="muhurat" aria-labelledby="muhurat-heading">
-    <h2 class="sec-title" id="muhurat-heading"><span aria-hidden="true">⏰ </span>आज के शुभ-अशुभ मुहूर्त — Aaj Ka Shubh Muhurat 2026</h2>
+    <h2 class="sec-title" id="muhurat-heading"><span aria-hidden="true">⏰ </span>Aaj Ke Shubh-Ashubh Muhurat <span style="font-size:0.7em;opacity:0.6;">(आज के मुहूर्त)</span></h2>
     <div class="muh-grid" id="muhGrid" aria-live="polite" aria-label="शुभ-अशुभ मुहूर्त सूची"></div>
   </section>
 
 
   <!-- ===== CHOGHADIYA SECTION ===== -->
   <section id="choghadiya" aria-labelledby="chog-heading" style="margin-bottom:22px;">
-    <h2 class="sec-title" id="chog-heading"><span aria-hidden="true">🕐 </span>आज का चौघड़िया — Aaj Ka Choghadiya</h2>
+    <h2 class="sec-title" id="chog-heading"><span aria-hidden="true">🕐 </span>Aaj Ka Choghadiya <span style="font-size:0.7em;opacity:0.6;">(आज का चौघड़िया)</span></h2>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;" class="chog-grid">
 
@@ -906,12 +943,12 @@ footer{text-align:center;padding:28px 0;border-top:1px solid rgba(79,195,247,0.1
   </section>
 
   <section id="activities" aria-labelledby="activity-heading">
-    <h2 class="sec-title" id="activity-heading"><span aria-hidden="true">🎯 </span>किस काम के लिए कौन सा शुभ मुहूर्त</h2>
+    <h2 class="sec-title" id="activity-heading"><span aria-hidden="true">🎯 </span>Kis Kaam Ke Liye Kaun Sa Muhurat? <span style="font-size:0.7em;opacity:0.6;">(काम अनुसार मुहूर्त)</span></h2>
     <div class="act-grid" id="actGrid" aria-live="polite" aria-label="कार्य अनुसार मुहूर्त"></div>
   </section>
 
   <section id="panchang" aria-labelledby="panchang-heading">
-    <h2 class="sec-title" id="panchang-heading"><span aria-hidden="true">📜 </span>आज का पंचांग 2026 — Tithi, Nakshatra, Yoga, Rashi</h2>
+    <h2 class="sec-title" id="panchang-heading"><span aria-hidden="true">📜 </span>Aaj Ka Panchang <span style="font-size:0.7em;opacity:0.6;">(आज का पंचांग — Tithi, Nakshatra, Yoga, Rashi)</span></h2>
     <div class="glass">
       <table class="panch-table" id="panchangTable" aria-label="Aaj Ka Panchang 2026 — Tithi Nakshatra Yoga" aria-live="polite"></table>
     </div>
@@ -958,7 +995,7 @@ footer{text-align:center;padding:28px 0;border-top:1px solid rgba(79,195,247,0.1
   <section id="about-muhurat" aria-labelledby="about-heading" style="margin-bottom:22px;">
     <article class="glass">
       <h2 id="about-heading" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.3rem;color:var(--blue1);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(79,195,247,0.15);">
-        मुहूर्त क्या होता है? <span style="font-size:0.8em;opacity:0.6;font-family:'Poppins',sans-serif;">(Muhurat Kya Hota Hai)</span>
+        Muhurat Kya Hota Hai? <span style="font-size:0.75em;opacity:0.6;font-family:'Poppins',sans-serif;">(मुहूर्त क्या होता है)</span>
       </h2>
       <div style="font-size:0.88rem;line-height:1.9;color:rgba(232,244,255,0.7);">
         <p style="margin-bottom:12px;">
@@ -1001,7 +1038,7 @@ footer{text-align:center;padding:28px 0;border-top:1px solid rgba(79,195,247,0.1
   <section id="muhurat-types" aria-labelledby="muhtypes-heading" style="margin-bottom:22px;">
     <div class="glass">
       <h2 id="muhtypes-heading" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.3rem;color:var(--blue1);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(79,195,247,0.15);">
-        <span aria-hidden="true">🪐 </span>सात मुहूर्त और उनके स्वामी ग्रह
+        <span aria-hidden="true">🪐 </span>Saat Muhurat Aur Unke Swami Grah <span style="font-size:0.7em;opacity:0.6;">(सात मुहूर्त और स्वामी ग्रह)</span>
       </h2>
       <p style="font-size:0.85rem;color:rgba(232,244,255,0.6);margin-bottom:16px;line-height:1.8;">
         वैदिक ज्योतिष में प्रतिदिन को <strong style="color:var(--blue1);">आठ चौघड़ियों</strong> में बाँटा जाता है — चार दिन में और चार रात में। प्रत्येक चौघड़िया का एक स्वामी ग्रह होता है जो उस काल की प्रकृति निर्धारित करता है।
@@ -1054,65 +1091,122 @@ footer{text-align:center;padding:28px 0;border-top:1px solid rgba(79,195,247,0.1
     </div>
   </section>
 
-  <!-- ===== SEO CONTENT: FAQ SECTION (Hinglish + Dynamic City) ===== -->
+  <!-- ===== SEO CONTENT: FAQ SECTION ===== -->
   <section id="faq" aria-labelledby="faq-heading" style="margin-bottom:22px;">
-    <h2 id="faq-heading" class="sec-title"><span aria-hidden="true">❓ </span>Muhurat FAQs — अक्सर पूछे जाने वाले सवाल</h2>
-    <div class="glass" itemscope itemtype="https://schema.org/FAQPage">
+    <h2 id="faq-heading" class="sec-title"><span aria-hidden="true">❓ </span>Aksar Puche Jaane Wale Sawaal <span style="font-size:0.7em;opacity:0.6;">(अक्सर पूछे जाने वाले प्रश्न — FAQs)</span></h2>
+    <div class="glass" id="faqSection" itemscope itemtype="https://schema.org/FAQPage">
 
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:14px 0;border-bottom:1px solid rgba(79,195,247,0.08);">
+      <!-- FAQ 1 -->
+      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:16px 0;border-bottom:1px solid rgba(79,195,247,0.1);">
         <h3 itemprop="name" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1rem;color:var(--blue1);margin-bottom:8px;">
-          <span class="faq-city-name">दिल्ली</span> mein aaj ka shubh muhurat kya hai? (<span class="faq-date-str">आज</span>)
+          <span class="faq-city">Delhi</span> mein aaj ka shubh muhurat kya hai? (आज का शुभ मुहूर्त)
         </h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.8;"><span class="faq-city-name">दिल्ली</span> ke liye aaj ka sabse shubh muhurat <strong style="color:var(--cream);">Abhijit Muhurat</strong> (अभिजित मुहूर्त) hai — jo dopahar ke samay lagbhag 48 minute ka hota hai. Iske alawa <strong style="color:var(--cream);">Brahma Muhurat</strong> (suryoday se 96 min pehle) aur <strong style="color:var(--cream);">Vijay Muhurat</strong> bhi bahut shubh maane jaate hain. Upar calculator mein date select karke exact time dekhen.</p>
+          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.9;">
+            <span class="faq-city">Delhi</span> ke liye aaj ka sabse shubh muhurat <strong style="color:var(--cream);">Abhijit Muhurat</strong> (अभिजित मुहूर्त) hai — jo solar noon ke aaspaas lagbhag 48 minute ka hota hai. Iske alawa <strong style="color:var(--cream);">Brahma Muhurat</strong> (suryoday se 96 min pehle) aur <strong style="color:var(--cream);">Vijay Muhurat</strong> bhi bahut shubh maane jaate hain. Upar calculator mein date select karke exact time dekhen.
+          </p>
         </div>
       </div>
 
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:14px 0;border-bottom:1px solid rgba(79,195,247,0.08);">
+      <!-- FAQ 2 -->
+      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:16px 0;border-bottom:1px solid rgba(79,195,247,0.1);">
         <h3 itemprop="name" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1rem;color:var(--blue1);margin-bottom:8px;">
-          <span class="faq-city-name">दिल्ली</span> mein aaj Rahu Kaal kitne baje hai?
+          Rahu Kaal aaj <span class="faq-city">Delhi</span> mein kitne baje hai? (राहु काल का समय)
         </h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.8;"><span class="faq-city-name">दिल्ली</span> ka Rahu Kaal har roz alag hota hai — kyunki ye aapke city ke <strong style="color:var(--cream);">sunrise aur sunset</strong> par depend karta hai. Upar calculator mein apna <strong style="color:var(--cream);">शहर चुनें</strong> — exact Rahu Kaal, Gulika aur Yamaganda timings turant dikhenge. Rahu Kaal mein koi bhi naya shubh kaam shuru na karein.</p>
+          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.9;">
+            <strong style="color:var(--cream);">Rahu Kaal</strong> ka samay har roz alag hota hai — ye aapke sheher ke <strong style="color:var(--cream);">sunrise aur sunset</strong> ke beech ke 8 equal parts mein se ek hota hai. <span class="faq-city">Delhi</span> mein Rahu Kaal ka sahi time dekhne ke liye upar calculator mein city chunen. Rahu Kaal mein koi bhi naya shubh kaam shuru na karein.
+          </p>
         </div>
       </div>
 
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:14px 0;border-bottom:1px solid rgba(79,195,247,0.08);">
+      <!-- FAQ 3 -->
+      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:16px 0;border-bottom:1px solid rgba(79,195,247,0.1);">
         <h3 itemprop="name" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1rem;color:var(--blue1);margin-bottom:8px;">
-          Vedic din ki calculation kaise hoti hai? Ratri 12 baje ke baad kya hoga?
+          Brahma Muhurat kab hota hai aur kyu zaroori hai? (ब्रह्म मुहूर्त)
         </h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.8;">Vedic tradition mein <strong style="color:var(--cream);">ek din suryoday se shuru hokar agle suryoday tak</strong> maana jaata hai. Isliye raat 12 baje ke baad bhi, suryoday tak pichle din ka panchang valid hota hai. Yahi reason hai ki ye calculator raat mein pichhli date ka muhurat dikhata hai — ye galti nahi, ye <strong style="color:var(--cream);">authentic Vedic calculation</strong> hai.</p>
+          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.9;">
+            <strong style="color:var(--cream);">Brahma Muhurat</strong> suryoday se 96 minute pehle shuru hokar 48 minute pehle tak rehta hai. Yeh <strong style="color:var(--cream);">pooja, dhyan, yoga aur adhyayan</strong> ke liye sabse pavitra samay maana jaata hai. <span class="faq-city">Delhi</span> mein aaj ka Brahma Muhurat exact time upar panchang calculator mein dekh sakte hain.
+          </p>
         </div>
       </div>
 
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:14px 0;border-bottom:1px solid rgba(79,195,247,0.08);">
+      <!-- FAQ 4 -->
+      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:16px 0;border-bottom:1px solid rgba(79,195,247,0.1);">
         <h3 itemprop="name" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1rem;color:var(--blue1);margin-bottom:8px;">
-          Shaadi ke liye sabse achha muhurat kaunsa hota hai?
+          Vedic din ki calculation kaise hoti hai? (वैदिक दिन — Midnight ke baad kya hoga?)
         </h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.8;">Vivah ke liye <strong style="color:var(--cream);">Godhuli Muhurat</strong> (sunset ke samay) sarvashreshtha maana jaata hai. Iske alawa <strong style="color:var(--cream);">Abhijit Muhurat</strong> aur Shukla Paksha ki tithiyaan bhi vivah ke liye shubh hoti hain. <span class="faq-city-name">दिल्ली</span> ya apni city mein aaj ka Godhuli Muhurat dekhne ke liye upar calculator use karein.</p>
+          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.9;">
+            Vedic tradition mein <strong style="color:var(--cream);">ek din suryoday se shuru hokar agle suryoday tak</strong> maana jaata hai — isliye raat 12 baje ke baad bhi suryoday tak pichle din ka panchang valid hota hai. Ye calculator isi authentic Vedic method se kaam karta hai.
+          </p>
         </div>
       </div>
 
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:14px 0;border-bottom:1px solid rgba(79,195,247,0.08);">
+      <!-- FAQ 5 -->
+      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:16px 0;border-bottom:1px solid rgba(79,195,247,0.1);">
         <h3 itemprop="name" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1rem;color:var(--blue1);margin-bottom:8px;">
-          Brahma Muhurat kab hota hai aur iska kya fayda hai?
+          Shaadi ke liye sabse achha muhurat kaunsa hai? (विवाह मुहूर्त)
         </h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.8;">Brahma Muhurat <strong style="color:var(--cream);">suryoday se 96 minute pehle shuru hokar 48 minute pehle tak</strong> rehta hai. Ye pooja, dhyan, yoga aur adhyayan ke liye sabse pavitra samay maana jaata hai. <span class="faq-city-name">दिल्ली</span> mein aaj ka Brahma Muhurat exact time upar panchang calculator mein dekh sakte hain.</p>
+          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.9;">
+            Vivah ke liye <strong style="color:var(--cream);">Godhuli Muhurat</strong> (sunset ke samay ±24 min) sarvashreshtha maana jaata hai. Iske alawa <strong style="color:var(--cream);">Abhijit Muhurat</strong> aur Shukla Paksha ki tithiyaan bhi vivah ke liye shubh hoti hain. <span class="faq-city">Delhi</span> mein aaj ka Godhuli Muhurat upar calculator se dekhen.
+          </p>
         </div>
       </div>
 
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:14px 0;">
+      <!-- FAQ 6 -->
+      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="padding:16px 0;">
         <h3 itemprop="name" style="font-family:'Tiro Devanagari Hindi',serif;font-size:1rem;color:var(--blue1);margin-bottom:8px;">
-          Ye calculator kitna accurate hai? Kya ye <span class="faq-city-name">दिल्ली</span> ke liye sahi kaam karta hai?
+          Ye Muhurat calculator kitna accurate hai? (SunCalc aur IP Detection)
         </h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.8;">Ye calculator <strong style="color:var(--cream);">SunCalc astronomical library</strong> use karta hai jo aapki city ke <strong style="color:var(--cream);">exact latitude-longitude</strong> ke hisaab se sunrise-sunset calculate karta hai. IP detection se aapki city automatic detect hoti hai. 20+ Indian cities ke exact coordinates pre-loaded hain — including <span class="faq-city-name">दिल्ली</span>, Mumbai, Kolkata, Chennai etc. Ye calculation khagoliya drishti se bahut sahi hai.</p>
+          <p itemprop="text" style="font-size:0.82rem;color:rgba(232,244,255,0.65);line-height:1.9;">
+            Ye calculator <strong style="color:var(--cream);">SunCalc astronomical library</strong> use karta hai jo aapki city ke <strong style="color:var(--cream);">exact latitude-longitude</strong> ke hisaab se sunrise-sunset calculate karta hai. Page load hote hi <strong style="color:var(--cream);">IP detection</strong> se aapka sheher automatic detect hota hai — bina kisi browser popup ke. <span class="faq-city">Delhi</span> aur 19 baaki Indian cities ke coordinates pre-loaded hain.
+          </p>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ===== FOOTER FAQ STRIP (3 quick Hinglish FAQs) ===== -->
+  <section id="footer-faq" style="margin-bottom:22px;" aria-label="Quick FAQ">
+    <div class="glass" style="padding:20px;">
+      <h2 style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.05rem;color:var(--blue1);margin-bottom:16px;border-bottom:1px solid rgba(79,195,247,0.12);padding-bottom:8px;">
+        💡 Quick Muhurat Guide — <span id="footerFaqCity">Delhi</span> Ke Liye
+      </h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+
+        <div style="background:rgba(79,195,247,0.05);border:1px solid rgba(79,195,247,0.15);border-radius:10px;padding:14px;">
+          <h3 style="font-family:'Tiro Devanagari Hindi',serif;color:var(--blue1);font-size:0.95rem;margin-bottom:6px;">
+            🌄 Brahma Muhurat Kab Hai?
+          </h3>
+          <p style="font-size:0.78rem;color:rgba(232,244,255,0.6);line-height:1.7;">
+            <span id="footerBrahmaCity">Delhi</span> mein aaj ka Brahma Muhurat — suryoday se thoda pehle ka pavitra samay. Pooja, dhyan aur padhai ke liye best. Upar calculator mein exact time dekhen.
+          </p>
+        </div>
+
+        <div style="background:rgba(79,195,247,0.05);border:1px solid rgba(79,195,247,0.15);border-radius:10px;padding:14px;">
+          <h3 style="font-family:'Tiro Devanagari Hindi',serif;color:#FFD700;font-size:0.95rem;margin-bottom:6px;">
+            🚫 Rahu Kaal Kab Bachna Chahiye?
+          </h3>
+          <p style="font-size:0.78rem;color:rgba(232,244,255,0.6);line-height:1.7;">
+            <span id="footerRahuCity">Delhi</span> mein Rahu Kaal mein koi naya shubh kaam mat karein — yeh ashubh kaal har roz weekday ke hisaab se badalta hai. Aaj ka exact time upar dekhen.
+          </p>
+        </div>
+
+        <div style="background:rgba(79,195,247,0.05);border:1px solid rgba(79,195,247,0.15);border-radius:10px;padding:14px;">
+          <h3 style="font-family:'Tiro Devanagari Hindi',serif;color:#81C784;font-size:0.95rem;margin-bottom:6px;">
+            ☀️ Abhijit Muhurat Kya Hai?
+          </h3>
+          <p style="font-size:0.78rem;color:rgba(232,244,255,0.6);line-height:1.7;">
+            <span id="footerAbhijitCity">Delhi</span> mein din ka sabse shubh muhurat — solar noon ke aaspaas 48 minutes. Business, travel, interview sab ke liye perfect. Wednesday ko avoid karein.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -1573,69 +1667,67 @@ function onCityChange() {
   }
 }
 
-// ---- IP-Based + Geolocation Detection (IP first, no browser popup) ----
-function applyDetectedLocation(lat, lng, cityDisplayName) {
+// =====================================================
+// LOCATION DETECTION — IP-FIRST (no browser popup)
+// Priority: 1) ipapi.co  2) Browser Geolocation  3) Delhi default
+// =====================================================
+function applyLocation(lat, lng, displayName) {
   userLat = lat;
   userLng = lng;
-  userCityName = cityDisplayName;
-  document.getElementById('locBadge').textContent = '📍 ' + cityDisplayName;
+  userCityName = displayName;
+  document.getElementById('locBadge').textContent = '📍 ' + displayName;
+  // Update Vedic date for new coordinates
   const now = new Date();
-  const times = SunCalc.getTimes(now, userLat, userLng);
-  let vedicDate;
-  if (now < times.sunrise) {
-    const yesterday = new Date(now);
-    yesterday.setDate(yesterday.getDate() - 1);
-    vedicDate = yesterday;
-  } else {
-    vedicDate = now;
-  }
+  const times = SunCalc.getTimes(now, lat, lng);
+  const vedicDate = now < times.sunrise
+    ? new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1)
+    : now;
   document.getElementById('dateInput').value = localDateStr(vedicDate);
   calculate();
 }
 
-function useDefaultDelhi() {
+function fallbackToDelhi() {
   document.getElementById('locBadge').textContent = '📍 दिल्ली (Default)';
+  userCityName = 'दिल्ली';
   calculate();
 }
 
 function getLocation() {
-  document.getElementById('locBadge').textContent = '📍 स्थान detect हो रहा है...';
+  document.getElementById('locBadge').textContent = '📍 आपकी city detect हो रही है...';
 
-  // STEP 1: IP-based detection (ipapi.co) — no browser popup needed
+  // STEP 1: Silent IP-based detection — NO browser popup needed
   fetch('https://ipapi.co/json/')
-    .then(res => res.json())
+    .then(r => r.json())
     .then(data => {
-      if (data && data.latitude && data.longitude && data.city) {
-        const cityName = data.city;
-        applyDetectedLocation(data.latitude, data.longitude, cityName);
-        // Also try to match with dropdown cities for clean display
-        const matchedKey = Object.keys(CITY_COORDS).find(k =>
-          CITY_COORDS[k].name.includes(cityName) ||
-          k.toLowerCase() === cityName.toLowerCase()
-        );
-        if (matchedKey) {
-          document.getElementById('citySelect').value = matchedKey;
-          userCityName = CITY_COORDS[matchedKey].name;
-          document.getElementById('locBadge').textContent = '📍 ' + userCityName + ' (IP detected)';
-          calculate();
-        }
+      if (!data || !data.latitude || !data.longitude) throw new Error('bad data');
+      const ipLat  = data.latitude;
+      const ipLng  = data.longitude;
+      const ipCity = data.city || data.region || 'आपका स्थान';
+
+      // Try to match with known cities for clean Hindi name
+      const matchKey = Object.keys(CITY_COORDS).find(k =>
+        k.toLowerCase() === (data.city || '').toLowerCase()
+      );
+      if (matchKey) {
+        document.getElementById('citySelect').value = matchKey;
+        applyLocation(CITY_COORDS[matchKey].lat, CITY_COORDS[matchKey].lng, CITY_COORDS[matchKey].name);
       } else {
-        throw new Error('IP data incomplete');
+        // Use raw IP coordinates with English city name
+        applyLocation(ipLat, ipLng, ipCity);
       }
     })
     .catch(() => {
-      // STEP 2: Fallback to browser geolocation (silent, no popup shown unless user allowed)
+      // STEP 2: Fallback — browser geolocation (silent attempt, no forced popup)
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-          pos => {
-            applyDetectedLocation(pos.coords.latitude, pos.coords.longitude,
-              `${pos.coords.latitude.toFixed(2)}°N, ${pos.coords.longitude.toFixed(2)}°E`);
-          },
-          () => useDefaultDelhi(),
-          { timeout: 6000 }
+          pos => applyLocation(pos.coords.latitude, pos.coords.longitude,
+            pos.coords.latitude.toFixed(1) + '°N'),
+          () => fallbackToDelhi(),
+          { timeout: 5000, maximumAge: 60000 }
         );
       } else {
-        useDefaultDelhi();
+        // STEP 3: Final fallback — Delhi
+        fallbackToDelhi();
       }
     });
 }
@@ -1647,72 +1739,63 @@ const MON_HI_FULL = ['जनवरी','फरवरी','मार्च','अ�
 function updateDynamicTitleAndH1(vedicDate, cityName) {
   const dayName = DAY_HI[vedicDate.getDay()];
   const dateStr = `${vedicDate.getDate()} ${MON_HI_FULL[vedicDate.getMonth()]} ${vedicDate.getFullYear()}`;
+  const isoDate = `${vedicDate.getFullYear()}-${String(vedicDate.getMonth()+1).padStart(2,'0')}-${String(vedicDate.getDate()).padStart(2,'0')}`;
 
-  // Dynamic <title> — Astroyogi + DrikPanchang strategy
+  // ── Dynamic <title> — Hinglish with [City] + [Date] ──
   const titleEl = document.getElementById('pageTitle');
   if (titleEl) {
-    titleEl.textContent = `${cityName} Aaj Ka Shubh Muhurat — ${dateStr} | आज का मुहूर्त, Rahu Kaal, Panchang`;
+    titleEl.textContent = `${cityName} Aaj Ka Shubh Muhurat | आज का मुहूर्त, Rahu Kaal — ${dateStr}`;
   }
 
-  // Dynamic meta description
-  const metaDesc = document.querySelector('meta[name="description"]');
+  // ── Dynamic meta description — Hinglish with [City] + [Date] ──
+  const metaDesc = document.getElementById('metaDesc') || document.querySelector('meta[name="description"]');
   if (metaDesc) {
     metaDesc.setAttribute('content',
-      `${cityName} mein ${dateStr} (${dayName}) ke liye aaj ka shubh muhurat, Rahu Kaal, Brahma Muhurat, Abhijit Muhurat, Godhuli Muhurat aur poorn panchang — आज का मुहूर्त। Vedic Panchang Calculator.`
+      `${cityName} mein ${dateStr} (${dayName}) ke liye aaj ka shubh muhurat, Rahu Kaal, Brahma Muhurat, Abhijit Muhurat, Godhuli Muhurat aur poora Panchang — आज का मुहूर्त 2026. Vedic Panchang Calculator.`
     );
   }
 
-  // Dynamic H1 city
+  // ── Dynamic H1 city + date span ──
   const h1City = document.getElementById('h1City');
-  if (h1City) h1City.textContent = `📍 ${cityName} — ${dayName}, ${dateStr}`;
+  if (h1City) h1City.textContent = `📍 ${cityName}  •  ${dayName}, ${dateStr}`;
 
-  // Dynamic H1 subtitle
+  // ── Dynamic subtitle ──
   const subtitle = document.getElementById('dynamicSubtitle');
   if (subtitle) {
-    subtitle.textContent = `${cityName} ka Aaj Ka Muhurat — ${dayName}, ${dateStr}`;
+    subtitle.textContent = `${cityName} ka Muhurat — ${dayName}, ${dateStr}`;
   }
 
-  // Dynamic OG title
+  // ── Dynamic OG title ──
   const ogTitle = document.querySelector('meta[property="og:title"]');
   if (ogTitle) {
-    ogTitle.setAttribute('content', `${dateStr} आज का मुहूर्त — ${cityName}`);
+    ogTitle.setAttribute('content', `${cityName} Aaj Ka Muhurat — ${dateStr} | आज का मुहूर्त`);
   }
 
-  // ===== Dynamic Event Schema (JSON-LD) =====
-  const eventSchemaId = 'dynamicEventSchema';
-  let eventSchemaEl = document.getElementById(eventSchemaId);
-  if (!eventSchemaEl) {
-    eventSchemaEl = document.createElement('script');
-    eventSchemaEl.type = 'application/ld+json';
-    eventSchemaEl.id = eventSchemaId;
-    document.head.appendChild(eventSchemaEl);
+  // ── Update Event Schema dynamically ──
+  const evSch = document.getElementById('eventSchema');
+  if (evSch) {
+    evSch.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": `${cityName} — ${dateStr} Aaj Ka Shubh Muhurat & Panchang`,
+      "description": `${cityName} mein ${dateStr} (${dayName}) ke liye aaj ka shubh muhurat: Brahma Muhurat, Abhijit Muhurat, Vijay Muhurat, Godhuli Muhurat, Rahu Kaal, Choghadiya. Vedic Panchang Calculator powered by SunCalc.`,
+      "startDate": isoDate,
+      "endDate": isoDate,
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "location": { "@type": "VirtualLocation", "url": "https://aajkamuhurat.in/" },
+      "organizer": { "@type": "Organization", "name": "Aaj Ka Muhurat", "url": "https://aajkamuhurat.in/" },
+      "url": `https://aajkamuhurat.in/?city=${encodeURIComponent(cityName)}&date=${isoDate}`,
+      "inLanguage": ["hi", "en"]
+    });
   }
-  const isoDate = `${vedicDate.getFullYear()}-${String(vedicDate.getMonth()+1).padStart(2,'0')}-${String(vedicDate.getDate()).padStart(2,'0')}`;
-  eventSchemaEl.textContent = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": `${cityName} — ${dateStr} का शुभ मुहूर्त और पंचांग`,
-    "description": `${cityName} mein ${dateStr} (${dayName}) ke liye aaj ka shubh muhurat: Brahma Muhurat, Abhijit Muhurat, Vijay Muhurat, Godhuli Muhurat aur Rahu Kaal. Vedic Panchang Calculator.`,
-    "startDate": isoDate,
-    "endDate": isoDate,
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-    "location": { "@type": "VirtualLocation", "url": "https://aajkamuhurat.in/" },
-    "organizer": { "@type": "Organization", "name": "Aaj Ka Muhurat", "url": "https://aajkamuhurat.in/" },
-    "url": `https://aajkamuhurat.in/?city=${encodeURIComponent(cityName)}&date=${isoDate}`,
-    "inLanguage": ["hi", "en"]
+
+  // ── Update all .faq-city spans + footer FAQ city refs ──
+  document.querySelectorAll('.faq-city').forEach(el => { el.textContent = cityName; });
+  ['footerFaqCity','footerBrahmaCity','footerRahuCity','footerAbhijitCity'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = cityName;
   });
-
-  // ===== Update FAQ section city names dynamically =====
-  updateFaqCityNames(cityName, dateStr);
-}
-
-// Update FAQ visible text with current city & date
-function updateFaqCityNames(cityName, dateStr) {
-  const faqCityEls = document.querySelectorAll('.faq-city-name');
-  faqCityEls.forEach(el => { el.textContent = cityName; });
-  const faqDateEls = document.querySelectorAll('.faq-date-str');
-  faqDateEls.forEach(el => { el.textContent = dateStr; });
 }
 
 function updateClock() {
